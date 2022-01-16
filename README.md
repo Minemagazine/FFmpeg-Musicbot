@@ -15,5 +15,5 @@
 4. index.py 실행
 
 ### 현재 명령어:
-perfix/join : 음성채널 접속
-perifx/leave : 음성채널 연결 끊기
+perfix/join : 음성채널 접속 </br>
+perifx/leave : 음성채널 연결 끊기 </br>
