@@ -13,7 +13,6 @@
 > pip install discord.py[voice] </br>
 > pip install python-dotenv </br>
 > pip install logging </br>
-</br>
 ### 현재 명령어:
 perfix:help : Cogs 기본 Help </br>
 perfix/join : 음성채널 접속 </br>
