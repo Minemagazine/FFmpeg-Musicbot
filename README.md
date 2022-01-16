@@ -9,10 +9,10 @@
 4. index.py 실행 </br>
 </br>
 ## 필요한 모듈 설치
-> pip install discord.py </br>
-> pip install discord.py[voice] </br>
-> pip install python-dotenv </br>
-> pip install logging </br>
+`pip install discord.py` </br>
+`pip install discord.py[voice]` </br>
+`pip install python-dotenv` </br>
+`pip install logging` </br>
 
 ### 현재 명령어:
 perfix:help : Cogs 기본 Help </br>
