@@ -3,6 +3,7 @@
 > Discord.py 1.7.3 </br>
 > > pip install discord.py </br>
 > > pip install discord.py[voice] </br>
+</br>
 > dotenv 0.19.2 </br>
 > > pip install python-dotenv </br>
 
