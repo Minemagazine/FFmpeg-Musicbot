@@ -1,7 +1,7 @@
 # FFmpeg-Musicbot
 오픈소스 뮤직봇
 
-# Python 3.8.10 | Windows 10, Linux Ubuntu Server 20.04.3 LTS
+### Python 3.8.10 | Windows 10, Linux Ubuntu Server 20.04.3 LTS
 ## 사용한 라이브러리
 > pip install discord.py </br>
 > pip install discord.py[voice] </br>
