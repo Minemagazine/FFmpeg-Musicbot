@@ -1,10 +1,6 @@
 import discord
-from discord import client, mentions, FFmpegAudio, voice_client, FFmpegPCMAudio, PCMVolumeTransformer
-from discord.ext import commands, tasks
-from discord.ext.commands.cooldowns import BucketType
-from discord.utils import get
-
-from youtube_dl import YoutubeDL
+from discord import client, FFmpegAudio, voice_client, FFmpegPCMAudio, PCMVolumeTransformer
+from discord.ext import commands
 
 global vc
 vc = { } # Voice Client
@@ -31,7 +27,6 @@ class music(commands.Cog):
 
     
     @commands.command(name='join', aliases=['j', '들어와', '접속'])
-    @commands.cooldown(1, 2, commands.BucketType.user)
     async def join(self, ctx):
         try:
             check_user_join_vcChannel = ctx.message.author.voice.channel.id
@@ -53,7 +48,6 @@ class music(commands.Cog):
 
 
     @commands.command(name='leave', aliases=['l', '나가', '퇴장'])
-    @commands.cooldown(1, 2, commands.BucketType.user)
     async def leave(self, ctx):
         try:
             check_user_join_vcChannel = ctx.message.author.voice.channel.id
