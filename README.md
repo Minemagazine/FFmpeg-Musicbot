@@ -7,7 +7,7 @@
 2. .env file TOKEN = YOUR_TOKEN 설정하기 </br>
 3. Perfix = BOT_Perfix 설정하기 </br>
 4. index.py 실행 </br>
-</br>
+
 ## 필요한 모듈 설치</br>
 pip install discord.py </br>
 pip install discord.py[voice] </br>
