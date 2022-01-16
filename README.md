@@ -8,7 +8,7 @@
 3. Perfix = BOT_Perfix 설정하기 </br>
 4. index.py 실행 </br>
 5. 
-## 사용한 모듈 설치
+## 필요한 모듈 설치
 > pip install discord.py </br>
 > pip install discord.py[voice] </br>
 > pip install python-dotenv </br>
