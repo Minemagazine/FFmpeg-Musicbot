@@ -1,15 +1,15 @@
 # FFmpeg-Musicbot
 Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
 
-### Python 3.8.10 | Windows 10, Linux Ubuntu Server 20.04.3 LTS
+### [Python 3.8.10](<https://www.python.org/downloads/release/python-3810>) | [Windows 10](<https://www.microsoft.com/ko-kr/software-download/windows10>), [Linux Ubuntu Server 20.04.3 LTS](<https://ubuntu.com/download/server>)
 ## 세팅
 1. [Python 3.8.10](<https://www.python.org/downloads/release/python-3810>) 및 [FFmpeg](<https://www.ffmpeg.org/download.html>) 설치하기
 2. 필요한 모듈 설치하기 </br>
-3. .env file TOKEN = YOUR_TOKEN 설정하기 </br>
-4. Prefix = BOT_Prefix 설정하기 </br>
+3. .env 파일에 `TOKEN = (토큰)` 설정하기 </br>
+4. `Prefix = (접두사)` 설정하기 </br>
 5. index.py 실행 </br>
 
-## 필요한 모듈 설치</br>
+## [필요한 모듈 설치](<https://pypi.org/>)</br>
 pip install discord.py </br>
 pip install discord.py[voice] </br>
 pip install python-dotenv </br>
