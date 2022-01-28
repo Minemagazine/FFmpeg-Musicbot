@@ -1,7 +1,7 @@
 # FFmpeg-Musicbot
 Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
 
-### [Python 3.8.10](<https://www.python.org/downloads/release/python-3810>) | [Windows 10](<https://www.microsoft.com/ko-kr/software-download/windows10>), [Linux Ubuntu Server 20.04.3 LTS](<https://ubuntu.com/download/server>)
+### [Python 3.8.10](<https://www.python.org/downloads/release/python-3810>) | [Windows 10](<https://www.microsoft.com/ko-kr/software-download/windows10>) 및 [Linux Ubuntu Server 20.04.3 LTS](<https://ubuntu.com/download/server>) 전용
 ## 세팅
 1. [Python 3.8.10](<https://www.python.org/downloads/release/python-3810>) 및 [FFmpeg](<https://www.ffmpeg.org/download.html>) 설치하기
 2. 필요한 모듈 설치하기 </br>
