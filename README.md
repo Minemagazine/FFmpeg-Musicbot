@@ -1,5 +1,5 @@
 # FFmpeg-Musicbot
-오픈소스 뮤직봇 </br>
+Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
 
 ### Python 3.8.10 | Windows 10, Linux Ubuntu Server 20.04.3 LTS
 ## 세팅
@@ -13,8 +13,17 @@ pip install discord.py </br>
 pip install discord.py[voice] </br>
 pip install python-dotenv </br>
 pip install logging </br>
+pip install youtube_dl </br>
+pip install datetime </br>
+pip install pytz </br>
+pip install youtube-search-python </br>
 
 ### 현재 명령어:
-perfix:help : Cogs 기본 Help </br>
-perfix/join : 음성채널 접속 </br>
-perifx/leave : 음성채널 연결 끊기 </br>
+prefix/help : Discord.py 기본 Help </br>
+prefix/join : 음성채널 접속 </br>
+prefix/leave : 음성채널 연결 끊기 </br>
+prefix/play <song> : 음악 재생 </br>
+
+#### 그다음 업데이트..
+> 대기열 기능
+> 스킵, 일시정지, 재개 등 재생 컨트롤 명령어
