@@ -1,5 +1,3 @@
-![pooh](https://koreanbots.dev/api/widget/bots/status/932196994775121930.svg?style=classic)
-
 # FFmpeg-Musicbot
 Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
 
