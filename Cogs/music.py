@@ -1,4 +1,4 @@
-import discord, datetime, pytz, youtubesearchpython
+import discord, datetime, pytz, youtubesearchpython, asyncio
 from discord import client, FFmpegPCMAudio
 from discord.ext import commands
 from youtube_dl import YoutubeDL
