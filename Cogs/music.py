@@ -64,6 +64,39 @@ def ydl_url(url):
     URL = info['formats'][0]['url']
     return URL
 
+def next_play(self, ctx):
+    key = queue.get(ctx.guild.id)
+
+    # 대기열이 없거나 0이면 나가기
+    if key is None or len(queue[ctx.guild.id]['title']) == 0:
+        client.loop.create_task(vc[ctx.guild.id].disconnect())
+        client.loop.create_task(ctx.send("Left Voice Channel"))
+
+    # 대기열이 있으면 재생하기
+    else: 
+        URL = ydl_url(url = queue[ctx.guild.id]['url'][0])
+        np.update({ctx.guild.id:{
+                    "title": key['title'][0],
+                    "url": key['url'][0],
+                    "image": key['image'][0],
+                    "cname": key['cname'][0]
+                }
+            }
+        )
+        del queue[ctx.guild.id]['title'][0]
+        del queue[ctx.guild.id]['url'][0]
+        del queue[ctx.guild.id]['image'][0]
+        del queue[ctx.guild.id]['cname'][0]
+
+
+
+        vc[ctx.guild.id].play(FFmpegPCMAudio(URL, **FFMPEG_OPTIONS), after = lambda e: next_play(self, ctx))
+        embed = nextcord.Embed(title = ' ', description = f'[{np[ctx.guild.id]["title"]}](<{np[ctx.guild.id]["url"]}>)', color=0x2F3136, timestamp=datetime.datetime.now(pytz.timezone('UTC')))
+        embed.set_author(name=np[ctx.guild.id]["cname"], url=np[ctx.guild.id]["url"], icon_url=self.client.user.avatar.url)
+        embed.set_thumbnail(url=np[ctx.guild.id]["image"])
+        embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar.url)
+        client.loop.create_task(ctx.send(embed = embed))
+
 
 
 class music(commands.Cog):
@@ -124,7 +157,7 @@ class music(commands.Cog):
             return
 
     @commands.command(name='play', aliases=['p', '재생'])
-    async def leave(self, ctx, *, msg=None):
+    async def play(self, ctx, *, msg=None):
         """재생 명령어 입니다 | .env파일에 설정한 접두사 + play <Song>로 사용이 가능하고, 단축어로 p, 재생으로 사용가능"""
         if msg is None:
             await ctx.send(f'{PREFIX}play <song>')
@@ -143,7 +176,7 @@ class music(commands.Cog):
             await ctx.send(f'Joined {ctx.message.author.voice.channel.mention}')
         except:
             try:
-                vc[ctx.guild.id].move_to(ctx.message.author.voice.channel)
+                pass
             except:
                 await ctx.reply("먼저 음성채널에 참가해주세요!", mention_author=False)
                 return
@@ -156,12 +189,12 @@ class music(commands.Cog):
         # 노래가 재생중이 아니라면
         if not vc[ctx.guild.id].is_playing(): 
 
-            scmsg = await ctx.reply(embed = discord.Embed(title= "🔍 검색중", description = f'**`{msg}`** 검색중..', color=0xFFFFFF), mention_author=False)
+            scmsg = await ctx.reply(embed = nextcord.Embed(title= "🔍 검색중", description = f'**`{msg}`** 검색중..', color=0xFFFFFF), mention_author=False)
 
             try:
                 title, url, image, cname  = videoSearch(msg)
             except:
-                await scmsg.edit(embed = discord.Embed(title= "검색 실패 <:failed1:912636274068832256>", description = f'**`{msg}`**에 대한 음악을 찾지 못했어요! \:(', color=0xF04747))
+                await scmsg.edit(embed = nextcord.Embed(title= "검색 실패", description = f'**`{msg}`**에 대한 음악을 찾지 못했어요! \:(', color=0xF04747))
                 return None
 
             # 리스트 초기화
@@ -180,16 +213,58 @@ class music(commands.Cog):
                 }
             )
 
-            vc[ctx.guild.id].play(FFmpegPCMAudio(URL, **FFMPEG_OPTIONS))
+            vc[ctx.guild.id].play(FFmpegPCMAudio(URL, **FFMPEG_OPTIONS), after = lambda e: next_play(self, ctx))
 
-            embed = discord.Embed(title = ' ', description = f'[{title}](<{url}>)', color=0x2F3136, timestamp=datetime.datetime.now(pytz.timezone('UTC')))
-            embed.set_author(name=cname, url=url, icon_url=self.client.user.avatar_url)
+            embed = nextcord.Embed(title = ' ', description = f'[{title}](<{url}>)', color=0x2F3136, timestamp=datetime.datetime.now(pytz.timezone('UTC')))
+            embed.set_author(name=cname, url=url, icon_url=self.client.user.avatar.url)
             embed.set_thumbnail(url=image)
-            embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
+            embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar.url)
             await scmsg.edit(embed = embed) # 재생 시작 알림 전송
 
         else:
-            await ctx.send("곡이 이미 재생중 입니다.")
+            scmsg = await ctx.reply(embed = nextcord.Embed(title= "🔍 검색중", description = f'**`{msg}`** 검색중..', color=0xFFFFFF), mention_author=False)
+
+            try:
+                title, url, image, cname  = videoSearch(msg)
+            except:
+                await scmsg.edit(embed = nextcord.Embed(title= "검색 실패", description = f'**`{msg}`**에 대한 음악을 찾지 못했어요! \:(', color=0xF04747))
+                return None
+            
+            key = queue.get(ctx.guild.id)
+
+            if key is None or len(queue[ctx.guild.id]['title']) == 0:
+                queue.update({ctx.guild.id:{
+                            "title": [title],
+                            "url": [url],
+                            "image": [image],
+                            "cname": [cname]
+                        }
+                    }
+                )
+
+            else:
+                queue[ctx.guild.id]['title'].append(title)
+                queue[ctx.guild.id]['url'].append(url)
+                queue[ctx.guild.id]['image'].append(image)
+                queue[ctx.guild.id]['cname'].append(cname)
+
+            embed = nextcord.Embed(description= f'Queued [{title}](<{url}>)') # Embed 선언
+            await scmsg.edit(embed = embed) # 전송
+
+
+
+
+    @commands.command(name='skip', aliases=['s', '스킵'])
+    async def skip(self, ctx):
+        if not vc[ctx.guild.id].is_playing():
+            await ctx.reply("재생중인 노래가 없습니다.", mention_author=False)
+
+        else:
+            embed = nextcord.Embed(title= f'⏭️ Skip Song', description = f'[{np[ctx.guild.id]["title"]}](<{np[ctx.guild.id]["url"]}>)', timestamp=datetime.datetime.now(pytz.timezone('UTC')), color=0x8e8e8e)
+            embed.set_thumbnail(url=np[ctx.guild.id]["image"])
+            embed.set_footer(text=ctx.message.author.name, icon_url=ctx.message.author.avatar.url)
+            await ctx.reply(embed = embed, mention_author=False)
+            vc[ctx.guild.id].stop()
 
 
 def setup(client):
