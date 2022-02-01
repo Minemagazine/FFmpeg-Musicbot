@@ -12,8 +12,9 @@ Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
 5. index.py 실행 </br>
 
 ## [필요한 모듈 설치](<https://pypi.org/>)</br>
-pip install discord.py </br>
-pip install discord.py[voice] </br>
+pip install nextcord </br>
+pip install nextcord[voice] </br>
+pip install nextcord[speed] </br>
 pip install python-dotenv </br>
 pip install logging </br>
 pip install youtube_dl </br>
@@ -22,11 +23,11 @@ pip install pytz </br>
 pip install youtube-search-python </br>
 
 ### 현재 명령어:
-prefix/help : Discord.py 기본 Help </br>
+prefix/help : Discord Cogs Help </br>
 prefix/join : 음성채널 접속 </br>
 prefix/leave : 음성채널 연결 끊기 </br>
-prefix/play <song> : 음악 재생 </br>
+prefix/play <song> : 음악 재생 (대기열 가능) </br>
+prefix/skip : 음악 스킵 </br>
 
 #### 그다음 업데이트..
-> 대기열 기능 </br>
-> 스킵, 일시정지, 재개 등 재생 컨트롤 명령어 </br>
+> 일시정지, 재개 등 재생 컨트롤 명령어 </br>
