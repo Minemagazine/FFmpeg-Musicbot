@@ -1,25 +1,35 @@
-import discord, datetime, pytz, youtubesearchpython 
-from discord import client, FFmpegPCMAudio
-from discord.ext import commands
+import nextcord, datetime, pytz, youtubesearchpython, json
+from nextcord import client, FFmpegPCMAudio
+from nextcord.ext import commands
 from youtube_dl import YoutubeDL
 from dotenv import dotenv_values
+from collections import OrderedDict
 config = dotenv_values(".env")
 PREFIX = config['PREFIX']
 FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'} # FFmpeg 옵션
 YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist':'True'} # YouTube DL 옵션
+client = nextcord.Client()
 
 global vc
 vc = { } # Voice Client
 
 global np
 np = { } # 현재 재생중인 곡의 정보를 담아둘 딕셔너리 자료
-
 # np[123456789123] = {
 #     "title": "영상 제목",
 #     "url": "영상 주소",
 #     "image": "썸네일 주소",
 #     "cname": "채널 이름"
 # } # 자동 생성될 예시 np[ctx.guild.id] 변수 ( 이건 지워도 됩니다. )
+
+global queue
+queue = { }
+# queue[123456789123] = {
+#     "title": {"영상 제목1", "영상 제목2"},
+#     "url": {"영상 주소1", "영상 주소2"},
+#     "image": {"썸네일 주소1", "썸네일 주소2"},
+#     "cname": {"채널 이름1", "채널 이름2"}
+# } # 자동 생성될 예시 queue[ctx.guild.id] 변수 ( 이건 지워도 됩니다.)
 
 def videoSearch(msg):
     videosSearch = youtubesearchpython.VideosSearch(str(msg), limit = 1).result()
