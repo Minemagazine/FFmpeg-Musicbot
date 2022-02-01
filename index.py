@@ -1,13 +1,13 @@
 from dotenv import dotenv_values
-import discord, logging, os
-from discord.ext import commands
+import nextcord, logging, os
+from nextcord.ext import commands
 
 
 config = dotenv_values(".env")
 TOKEN = config['TOKEN']
 PREFIX = config['PREFIX']
 
-intentsa = discord.Intents().all()
+intentsa = nextcord.Intents().all()
 client = commands.Bot(command_prefix= f"{PREFIX}", Intents=intentsa)
 
 
@@ -22,7 +22,7 @@ async def on_ready():
     print("\033[95mSystem login SUCCESS")
     print('\u001b[37m')
     server_count = len(client.guilds)
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=f'{PREFIX}help | {server_count} Guilds'))
+    await client.change_presence(activity=nextcord.Activity(type=nextcord.ActivityType.listening, name=f'{PREFIX}help | {server_count} Guilds'))
 
 @client.event
 async def on_command_error(ctx, error):
