@@ -31,3 +31,5 @@ prefix/skip : 음악 스킵 </br>
 
 #### 그다음 업데이트..
 > 일시정지, 재개 등 재생 컨트롤 명령어 </br>
+
+##### 과거에 Discord.py 관련 라이브러리를 설치한적이 있다면 `pip uninstall discord`로 제거하시기 바랍니다
