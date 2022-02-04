@@ -12,15 +12,8 @@ Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
 5. index.py 실행 </br>
 
 ## [필요한 모듈 설치](<https://pypi.org/>)</br>
-pip install nextcord </br>
-pip install nextcord[voice] </br>
-pip install nextcord[speed] </br>
-pip install python-dotenv </br>
-pip install logging </br>
-pip install youtube_dl </br>
-pip install datetime </br>
-pip install pytz </br>
-pip install youtube-search-python </br>
+pip install -r requirements.txt </br>
+
 
 ### 현재 명령어:
 prefix/help : Discord Cogs Help </br>
