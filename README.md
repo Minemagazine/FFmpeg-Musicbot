@@ -1,7 +1,7 @@
 [![image](https://camo.githubusercontent.com/92ea74d7973332713853b8c55160f4aa90287bb2e110273868dbe03e35d47391/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f6e657874636f72642e737667)](<https://python.org>)
 [![image](https://camo.githubusercontent.com/324d18ad5779de51284f50c943a0fd12d62f11c3e1f8d114480082e439e082ce/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f4d6967616e3137382f6b75626f74)](<https://www.gnu.org/licenses/gpl-3.0.html>)
 # FFmpeg-Musicbot
-Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
+Zeroy 봇 v1.0.1의 기반이 되는 오픈소스 뮤직봇 </br>
 
 ### [Python 3.9.10](<https://www.python.org/downloads/release/python-3910>) | [Windows 10](<https://www.microsoft.com/ko-kr/software-download/windows10>) 및 [Linux Ubuntu 20.04.3 LTS](<https://ubuntu.com/download/server>)
 ## 세팅
