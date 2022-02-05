@@ -277,6 +277,14 @@ class music(commands.Cog):
             await ctx.reply("재생중인 노래가 없습니다.", mention_author=False)
 
 
+    @commands.command(name='resume', aliases=['r', '재개', '다시재생'])
+    async def resume(self, ctx):
+        try:
+            vc[ctx.guild.id].resume()
+        except:
+            await ctx.reply("재생중인 노래가 없습니다.", mention_author=False)
+        else:
+            await ctx.reply(embed = nextcord.Embed(title= "⏯️ Replay", description = f'[{np[ctx.guild.id]["title"]}](<{np[ctx.guild.id]["url"]}>)', color = 0x64ff68), mention_author=False)
 
 
 
