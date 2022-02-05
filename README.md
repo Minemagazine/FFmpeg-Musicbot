@@ -7,22 +7,23 @@ Zeroy 봇의 기반이 되는 오픈소스 뮤직봇 </br>
 ## 세팅
 1. [Python 3.9.10](<https://www.python.org/downloads/release/python-3910/>) 및 [FFmpeg](<https://www.ffmpeg.org/download.html>) 설치하기
 2. 필요한 모듈 설치하기 </br>
-3. .env 파일에 `TOKEN = (토큰)` 설정하기 </br>
-4. `Prefix = (접두사)` 설정하기 </br>
-5. index.py 실행 </br>
+3. .env 파일에 `TOKEN = (토큰)` 및 `Prefix = (접두사)` 설정하기 </br>
+4. index.py 실행 </br>
 
 ## [필요한 모듈 설치](<https://pypi.org/>)</br>
 pip install -r requirements.txt </br>
 
 
 ### 현재 명령어:
-prefix/help : Discord Cogs Help </br>
+prefix/help : 도움말 </br>
 prefix/join : 음성채널 접속 </br>
 prefix/leave : 음성채널 연결 끊기 </br>
 prefix/play <song> : 음악 재생 (대기열 가능) </br>
 prefix/skip : 음악 스킵 </br>
+prefix/stop : 음악 정지 </br>
+prefix/resume : 음악 재개 </br>
 
 #### 그다음 업데이트..
-> 일시정지, 재개 등 재생 컨트롤 명령어 </br>
+> 큐  명령어 </br>
 
 ##### 과거에 Discord.py 관련 라이브러리를 설치한적이 있다면 `pip uninstall discord`로 제거하시기 바랍니다
