@@ -173,7 +173,7 @@ class music(commands.Cog):
         # 음성 채널 입장
         try:
             vc[ctx.guild.id] = await ctx.message.author.voice.channel.connect()
-            await ctx.send(f'Joined {ctx.message.author.voice.channel.mention}')
+            # await ctx.send(f'Joined {ctx.message.author.voice.channel.mention}')
         except:
             try:
                 pass
@@ -265,6 +265,21 @@ class music(commands.Cog):
             embed.set_footer(text=ctx.message.author.name, icon_url=ctx.message.author.avatar.url)
             await ctx.reply(embed = embed, mention_author=False)
             vc[ctx.guild.id].stop()
+
+
+    @commands.command(name='stop', aliases=['pause', '일시정지', '정지'])
+    async def stop(self, ctx):
+        if vc[ctx.guild.id].is_playing():
+            vc[ctx.guild.id].pause()
+            await ctx.reply(embed = nextcord.Embed(title= "⏸️ Stop", description = f'[{np[ctx.guild.id]["title"]}](<{np[ctx.guild.id]["url"]}>)', color = 0xff6464), mention_author=False)
+
+        else:
+            await ctx.reply("재생중인 노래가 없습니다.", mention_author=False)
+
+
+
+
+
 
 
 def setup(client):
