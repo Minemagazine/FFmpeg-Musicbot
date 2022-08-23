@@ -15,13 +15,13 @@ Zeroy 봇 v1.0.1의 기반이 되는 오픈소스 뮤직봇 </br>
 pip install -r requirements.txt </br>
 
 ### 현재 명령어:
-prefix/help : 도움말 </br>
-prefix/join : 음성채널 접속 </br>
-prefix/leave : 음성채널 연결 끊기 </br>
-prefix/play <song> : 음악 재생 (대기열 가능) </br>
-prefix/skip : 음악 스킵 </br>
-prefix/stop : 음악 정지 </br>
-prefix/resume : 음악 재개 </br>
+/help : 도움말 </br>
+/join : 음성채널 접속 </br>
+/leave : 음성채널 연결 끊기 </br>
+/play <song> : 음악 재생 (대기열 가능) </br>
+/skip : 음악 스킵 </br>
+/stop : 음악 정지 </br>
+/resume : 음악 재개 </br>
 
 #### 그다음 업데이트..
 > 큐  명령어 </br>
