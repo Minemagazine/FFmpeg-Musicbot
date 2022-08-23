@@ -4,27 +4,26 @@
 Zeroy 봇 v1.0.1의 기반이 되는 오픈소스 뮤직봇 </br>
 
 ### 테스트 환경
-[Python 3.9.10](<https://www.python.org/downloads/release/python-3910>) | [Windows 10](<https://www.microsoft.com/ko-kr/software-download/windows10>) 및 [Linux Ubuntu 20.04.3 LTS](<https://ubuntu.com/download/server>)
+[Python 3.9.10](<https://www.python.org/downloads/release/python-3910>) | [Linux Ubuntu 22.04.1 LTS](<https://ubuntu.com/download/server>)
 ## 세팅
 1. [Python 3.9.10](<https://www.python.org/downloads/release/python-3910/>) 및 [FFmpeg](<https://www.ffmpeg.org/download.html>) 설치하기
 2. 필요한 모듈 설치하기 </br>
-3. .env 파일에 `TOKEN = (토큰)` 및 `Prefix = (접두사)` 설정하기 </br>
+3. index.py 파일의 TOKEN 설정하기 </br>
 4. index.py 실행 </br>
 
 ## [필요한 모듈 설치](<https://pypi.org/>)</br>
 pip install -r requirements.txt </br>
 
-
 ### 현재 명령어:
-prefix/help : 도움말 </br>
-prefix/join : 음성채널 접속 </br>
-prefix/leave : 음성채널 연결 끊기 </br>
-prefix/play <song> : 음악 재생 (대기열 가능) </br>
-prefix/skip : 음악 스킵 </br>
-prefix/stop : 음악 정지 </br>
-prefix/resume : 음악 재개 </br>
+/help : 도움말 </br>
+/join : 음성채널 접속 </br>
+/leave : 음성채널 연결 끊기 </br>
+/play <song> : 음악 재생 (대기열 가능) </br>
+/skip : 음악 스킵 </br>
+/stop : 음악 정지 </br>
+/resume : 음악 재개 </br>
 
 #### 그다음 업데이트..
 > 큐  명령어 </br>
 
-##### 과거에 Discord.py 관련 라이브러리를 설치한적이 있다면 `pip uninstall discord`로 제거하시기 바랍니다
+##### 과거에 Discord.py 관련 라이브러리를 설치한적이 있다면 `pip uninstall discord.py`로 제거하시기 바랍니다
