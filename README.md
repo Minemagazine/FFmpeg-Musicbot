@@ -4,7 +4,7 @@
 Zeroy 봇 v1.0.1의 기반이 되는 오픈소스 뮤직봇 </br>
 
 ### 테스트 환경
-[Python 3.9.10](<https://www.python.org/downloads/release/python-3910>) | [Linux Ubuntu 20.04.3 LTS](<https://ubuntu.com/download/server>)
+[Python 3.9.10](<https://www.python.org/downloads/release/python-3910>) | [Linux Ubuntu 22.04.1 LTS](<https://ubuntu.com/download/server>)
 ## 세팅
 1. [Python 3.9.10](<https://www.python.org/downloads/release/python-3910/>) 및 [FFmpeg](<https://www.ffmpeg.org/download.html>) 설치하기
 2. 필요한 모듈 설치하기 </br>
