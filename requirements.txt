@@ -1,9 +1,4 @@
-nextcord==2.0.0a10
-nextcord[voice]==2.0.0a10
-nextcord[speed]==2.0.0a10
-python-dotenv==0.19.2
-youtube-dl==2021.12.17
-DateTime==4.3
-pytz==2021.3
-youtube-search-python==1.6.2
-asyncio==3.4.3
+youtube-dl
+DateTime
+pytz
+youtube-search-python
