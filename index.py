@@ -4,7 +4,7 @@ import nextcord
 from nextcord.ext import commands, application_checks
 
 PREFIX = str("음악!")
-OWNER_ID = int("971981029206274079")
+OWNER_ID = int("your id")
 TOKEN = str("your bot token")
 
 bot = commands.Bot(command_prefix=PREFIX, help_command=None, owner_id=OWNER_ID)
