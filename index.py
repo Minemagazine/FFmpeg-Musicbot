@@ -3,7 +3,7 @@ import logging, os
 import nextcord
 from nextcord.ext import commands, application_checks
 
-PREFIX = str("음악!")
+PREFIX = str("your PREFIX")
 OWNER_ID = int("your id")
 TOKEN = str("your bot token")
 
